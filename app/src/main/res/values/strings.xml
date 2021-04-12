@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RecipeApp</string>
+    <string name="welcomeStr">Welcome to --App Name--!</string>
 </resources>
