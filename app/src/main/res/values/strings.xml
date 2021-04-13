@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">RecipeApp</string>
     <string name="welcomeStr">Welcome to --App Name--!</string>
+    <string name="chocolateChipCookieContentDescription">Image of Chocolate Chip Cookies</string>
+    <string name="chocolateCakeContentDescription">Image of Chocolate Cake</string>
 
 </resources>
