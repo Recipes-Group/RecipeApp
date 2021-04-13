@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("3. Back   ==> Reads the previous step.");
         System.out.println("4. Skip   ==> Skips to the step you are choosing. Steps entered must be between 1 and last step");
         System.out.println("5. Quit   ==> Stops making the recipe and returns you to the home screen.");
-        System.out.println("6. Finish   ==> Displays these commands.");
+        System.out.println("6. Finish  ==> Displays these commands.");
     }
 
 
