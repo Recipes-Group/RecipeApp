@@ -3,6 +3,7 @@ package com.example.recipeapp;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Scanner;
+import android.view.View;
 
 import android.os.Bundle;
 
