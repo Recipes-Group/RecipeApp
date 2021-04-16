@@ -6,7 +6,7 @@
     <string name="chocolateCakeContentDescription">This is a picture of a chocolate cake</string>
     <string name="infoButtonText">INFO</string>
     <string name="cookButtonText">Cook Now!</string>
-    <string name="stepDirectionsText">Distribute cake batter evenly between the two prepared cake pans. Bake for 30-35 minutes, until a toothpick or cake tester inserted in the center of the chocolate cake comes out clean.</string>
+    <string name="stepDirectionsText"></string>
     <string name="infoTitleText">Commands Info</string>
     <string name="command1Text">Next   ==> Advances to the next step.</string>
     <string name="command2Text">Back   ==> Reads the previous step.</string>
