@@ -13,5 +13,7 @@
     <string name="command3Text">Skip   ==> Skips to the step you are choosing. Steps entered must be between 1 and last step.</string>
     <string name="command4Text">Quit   ==> Stops making the recipe and returns you to the home screen.</string>
     <string name="command5Text">Finish ==> Displays these commands.</string>
+    <string name="onOffButtonStr">Off</string>
+    <string name="micContentDescription">Image of Mic</string>
 
 </resources>
