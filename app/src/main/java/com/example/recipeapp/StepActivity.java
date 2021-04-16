@@ -6,14 +6,36 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class StepActivity extends AppCompatActivity {
+
+    private ArrayList<String> steps = new ArrayList<String>();
+    private Recipe cookies = new Recipe("Chocolate Chip Cookies", "https://www.allrecipes.com/recipe/10813/best-chocolate-chip-cookies/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step);
+
+        cookies.addIngredient("1 cup butter, softened");
+        cookies.addIngredient("1 cup white sugar");
+        cookies.addIngredient("1 cup packed brown sugar");
+        cookies.addIngredient("2 eggs");
+        cookies.addIngredient("1 teaspoon baking soda");
+        cookies.addIngredient("2 teaspoons hot water");
+        cookies.addIngredient("½ teaspoon salt");
+        cookies.addIngredient("3 cups all-purpose flour");
+        cookies.addIngredient("2 cups semisweet chocolate chips");
+        cookies.addIngredient("1 cup chopped walnuts");
+
+        cookies.addStep("Preheat oven to 350 degrees F (175 degrees C).");
+        cookies.addStep("Cream together the butter, white sugar, and brown sugar until smooth. Beat in the eggs one at a time, then stir in the vanilla. Dissolve baking soda in hot water. Add to batter along with salt. Stir in flour, chocolate chips, and nuts. Drop by large spoonfuls onto ungreased pans.");
+        cookies.addStep("Bake for about 10 minutes in the preheated oven, or until edges are nicely browned.");
+
     }
 
     public void getInfo(View v) {
@@ -26,24 +48,16 @@ public class StepActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void cookRecipe(View v) {
+    public void displayInfo() {
+        Intent intent = new Intent(this, InfoButtonActivity.class);
+        startActivity(intent);
 
-
-        System.out.println("\nCommands Info:");
-        System.out.println("1. Next    ==> Advances to the next step.");
-        System.out.println("2. Repeat  ==> Reads the most recent step again.");
-        System.out.println("3. Back    ==> Reads the previous step.");
-        System.out.println("4. Skip    ==> Skips to the step you are choosing. Steps entered must be between 1 and last step");
-        System.out.println("5. Quit    ==> Stops making the recipe and returns you to the home screen.");
-        System.out.println("6. Finish  ==> Displays these commands.");
     }
 
-    public void displayInfo() {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        final View INFOPOPUPVIEW = getLayoutInflater().inflate(R.layout.info_popup, null);
-
-        dialogBuilder.setView(INFOPOPUPVIEW);
-
+    TextView tv1 = (TextView)findViewById(R.id.stepDescriptionText);
+    public void next() {
+        tv1.setText(cookies.stepIndexOf(0));
+        setContentView(tv1);
     }
 
 
