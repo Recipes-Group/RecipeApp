@@ -54,8 +54,8 @@ public class StepActivity extends AppCompatActivity {
 
     }
 
-    TextView tv1 = (TextView)findViewById(R.id.stepDescriptionText);
     public void next() {
+        TextView tv1 = (TextView)findViewById(R.id.stepDescriptionText);
         tv1.setText(cookies.stepIndexOf(0));
         setContentView(tv1);
     }
