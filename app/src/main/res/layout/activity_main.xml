@@ -96,6 +96,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chocolateCakeButton" />
 
+        <Button
+            android:id="@+id/cookButton"
+            android:layout_width="122dp"
+            android:layout_height="48dp"
+            android:onClick="cookRecipe"
+            tools:layout_editor_absoluteX="110dp"
+            tools:layout_editor_absoluteY="592dp"
+            tools:text="@string/cookButtonText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
