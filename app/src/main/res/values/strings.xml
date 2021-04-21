@@ -15,5 +15,7 @@
     <string name="command5Text">Finish ==> Displays these commands.</string>
     <string name="onOffButtonStr">Off</string>
     <string name="micContentDescription">Image of Mic</string>
+    <string name="chocolateChipCookieLabel">Chocolate Chip Cookies</string>
+    <string name="chocolateCakeLabel">Chocolate Cake</string>
 
 </resources>
