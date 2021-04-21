@@ -27,6 +27,7 @@
         android:id="@+id/stepDescriptionText"
         android:layout_width="369dp"
         android:layout_height="121dp"
+        android:text="@string/stepDirectionsText"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/infoButton"
@@ -46,6 +47,24 @@
         android:text="@string/infoButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.456" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="342dp"
+        android:layout_marginEnd="211dp"
+        android:layout_marginBottom="294dp"
+        android:keyboardNavigationCluster="false"
+        android:onClick="next"
+        android:text="@string/nextButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/infoButton"
+        app:layout_constraintTop_toBottomOf="@+id/stepDescriptionText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

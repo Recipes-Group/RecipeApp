@@ -6,7 +6,7 @@
     <string name="chocolateCakeContentDescription">This is a picture of a chocolate cake</string>
     <string name="infoButtonText">INFO</string>
     <string name="cookButtonText">Cook Now!</string>
-    <string name="stepDirectionsText"></string>
+    <string name="stepDirectionsText">THIS IS THE CURRENT STEP</string>
     <string name="infoTitleText">Commands Info</string>
     <string name="command1Text">Next   ==> Advances to the next step.</string>
     <string name="command2Text">Back   ==> Reads the previous step.</string>
@@ -17,5 +17,6 @@
     <string name="micContentDescription">Image of Mic</string>
     <string name="chocolateChipCookieLabel">Chocolate Chip Cookies</string>
     <string name="chocolateCakeLabel">Chocolate Cake</string>
+    <string name="nextButtonText">NEXT</string>
 
 </resources>
