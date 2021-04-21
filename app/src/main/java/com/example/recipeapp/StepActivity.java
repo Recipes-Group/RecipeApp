@@ -55,11 +55,15 @@ public class StepActivity extends AppCompatActivity {
     }
 
     public void next() {
-        TextView tv1 = (TextView)findViewById(R.id.stepDescriptionText);
+        /*TextView tv1 = (TextView)findViewById(R.id.stepDescriptionText);
         tv1.setText(cookies.stepIndexOf(0));
         setContentView(tv1);
+
+        String string = getString(R.string.stepDirectionsText);
+        string = cookies.stepIndexOf(0); */
+
+        final TextView textViewToChange = (TextView) findViewById(R.id.stepDescriptionText);
+        textViewToChange.setText("The new text that I'd like to display now that the user has pushed a button.");
     }
-
-
 
 }
