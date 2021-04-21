@@ -21,33 +21,79 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/chocolateChipCookieButton"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
-        android:layout_marginTop="10dp"
-        android:contentDescription="@string/chocolateChipCookieContentDescription"
-        app:layout_constraintEnd_toStartOf="@+id/chocolateCakeButton"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/column1"
+        android:layout_width="293dp"
+        android:layout_height="783dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/column2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WelcomeText"
-        app:srcCompat="@drawable/chocolatechipcookies" />
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeText">
 
-    <ImageButton
-        android:id="@+id/chocolateCakeButton"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
-        android:contentDescription="@string/chocolateCakeContentDescription"
+        <ImageButton
+            android:id="@+id/chocolateChipCookieButton"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/chocolateChipCookieContentDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chocolatechipcookies" />
+
+        <TextView
+            android:id="@+id/chocolateChipCookieLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/chocolateChipCookieLabel"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chocolateChipCookieButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/column2"
+        android:layout_width="283dp"
+        android:layout_height="771dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/chocolateChipCookieButton"
-        app:layout_constraintTop_toTopOf="@+id/chocolateChipCookieButton"
-        app:srcCompat="@drawable/chocolatecake" />
+        app:layout_constraintStart_toEndOf="@+id/column1"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeText"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageButton
+            android:id="@+id/chocolateCakeButton"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:contentDescription="@string/chocolateCakeContentDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chocolatecake" />
+
+        <TextView
+            android:id="@+id/chocolateCakeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chocolateCakeLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chocolateCakeButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/cookButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="122dp"
+        android:layout_height="48dp"
         android:layout_marginStart="159dp"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="132dp"
@@ -55,8 +101,10 @@
         android:onClick="cookRecipe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chocolateChipCookieButton"
+        app:layout_constraintVertical_bias="1.0"
         tools:text="@string/cookButtonText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
