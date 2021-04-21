@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">RecipeApp</string>
-    <string name="welcomeStr">Welcome to --App Name--!</string>
+    <string name="welcomeStr">Welcome to the Recipe Reader!</string>
     <string name="stepNumberText">Step #4</string>
     <string name="chocolateChipCookieContentDescription">This is a picture of a chocolate chip cookie</string>
     <string name="chocolateCakeContentDescription">This is a picture of a chocolate cake</string>
