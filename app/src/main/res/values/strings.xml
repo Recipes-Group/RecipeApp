@@ -15,5 +15,6 @@
     <string name="command5Text">Finish ==> Displays these commands.</string>
     <string name="onOffButtonStr">Off</string>
     <string name="micContentDescription">Image of Mic</string>
+    <string name="nextButtonText">NEXT</string>
 
 </resources>

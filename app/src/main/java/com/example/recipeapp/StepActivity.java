@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,7 +55,7 @@ public class StepActivity extends AppCompatActivity {
 
     }
 
-    public void next() {
+    public void next(View v) {
         /*TextView tv1 = (TextView)findViewById(R.id.stepDescriptionText);
         tv1.setText(cookies.stepIndexOf(0));
         setContentView(tv1);
@@ -64,6 +65,9 @@ public class StepActivity extends AppCompatActivity {
 
         final TextView textViewToChange = (TextView) findViewById(R.id.stepDescriptionText);
         textViewToChange.setText("The new text that I'd like to display now that the user has pushed a button.");
+
+        Button mButton = (Button) findViewById(R.id.nextButton);
+
     }
 
 }
