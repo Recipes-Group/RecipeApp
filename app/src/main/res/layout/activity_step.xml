@@ -11,59 +11,57 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:text="@string/stepNumberText"
         android:textAlignment="textStart"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/stepDescriptionText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/stepDescriptionText"
-        android:layout_width="369dp"
-        android:layout_height="121dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/stepDirectionsText"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/infoButton"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAlignment"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAlignment" />
 
-    <Button
-        android:id="@+id/infoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="665dp"
-        android:layout_marginBottom="350dp"
-        android:onClick="getInfo"
-        android:text="@string/infoButtonText"
+    <LinearLayout
+        android:id="@+id/buttonAlignment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456" />
+        app:layout_constraintVertical_bias="1.0">
 
-    <Button
-        android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="342dp"
-        android:layout_marginEnd="211dp"
-        android:layout_marginBottom="294dp"
-        android:keyboardNavigationCluster="false"
-        android:onClick="next"
-        android:text="@string/nextButtonText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/infoButton"
-        app:layout_constraintTop_toBottomOf="@+id/stepDescriptionText" />
+        <Button
+            android:id="@+id/infoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="getInfo"
+            android:text="@string/infoButtonText" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:keyboardNavigationCluster="false"
+            android:onClick="next"
+            android:text="@string/nextButtonText" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
