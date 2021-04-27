@@ -12,9 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeApp">
-        <activity android:name=".InfoButtonActivity"></activity>
+        <activity android:name=".SkipPopup"></activity>
+        <activity android:name=".InfoButtonActivity" />
         <activity android:name=".StepActivity" />
-        <activity android:name=".SpeechRecognitionActivity"></activity>
+        <activity android:name=".SpeechRecognitionActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

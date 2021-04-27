@@ -95,7 +95,7 @@ public class Recipe {
     }
 
     //3. Back
-    public String back() {
+    public String getPreviousStep() {
         step--;
         return this.stepIndexOf(step);
     }
