@@ -15,30 +15,27 @@ import java.util.ArrayList;
 public class StepActivity extends AppCompatActivity {
 
     private ArrayList<String> steps = new ArrayList<String>();
-    private Recipe recipe;
-    private int currentStep = 0;
+    private Recipe recipe = new Recipe("Chocolate Chip Cookies", "https://www.allrecipes.com/recipe/10813/best-chocolate-chip-cookies/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step);
 
-        recipe = new Recipe("Chocolate Chip Cookies", "https://www.allrecipes.com/recipe/10813/best-chocolate-chip-cookies/");
-
         recipe.addIngredient("1 cup butter, softened");
-        recipe.addIngredient("1 cup white sugar");
-        recipe.addIngredient("1 cup packed brown sugar");
-        recipe.addIngredient("2 eggs");
-        recipe.addIngredient("1 teaspoon baking soda");
-        recipe.addIngredient("2 teaspoons hot water");
-        recipe.addIngredient("½ teaspoon salt");
-        recipe.addIngredient("3 cups all-purpose flour");
-        recipe.addIngredient("2 cups semisweet chocolate chips");
-        recipe.addIngredient("1 cup chopped walnuts");
+        cookies.addIngredient("1 cup white sugar");
+        cookies.addIngredient("1 cup packed brown sugar");
+        cookies.addIngredient("2 eggs");
+        cookies.addIngredient("1 teaspoon baking soda");
+        cookies.addIngredient("2 teaspoons hot water");
+        cookies.addIngredient("½ teaspoon salt");
+        cookies.addIngredient("3 cups all-purpose flour");
+        cookies.addIngredient("2 cups semisweet chocolate chips");
+        cookies.addIngredient("1 cup chopped walnuts");
 
-        recipe.addStep("Preheat oven to 350 degrees F (175 degrees C).");
-        recipe.addStep("Cream together the butter, white sugar, and brown sugar until smooth. Beat in the eggs one at a time, then stir in the vanilla. Dissolve baking soda in hot water. Add to batter along with salt. Stir in flour, chocolate chips, and nuts. Drop by large spoonfuls onto ungreased pans.");
-        recipe.addStep("Bake for about 10 minutes in the preheated oven, or until edges are nicely browned.");
+        cookies.addStep("Preheat oven to 350 degrees F (175 degrees C).");
+        cookies.addStep("Cream together the butter, white sugar, and brown sugar until smooth. Beat in the eggs one at a time, then stir in the vanilla. Dissolve baking soda in hot water. Add to batter along with salt. Stir in flour, chocolate chips, and nuts. Drop by large spoonfuls onto ungreased pans.");
+        cookies.addStep("Bake for about 10 minutes in the preheated oven, or until edges are nicely browned.");
 
     }
 
@@ -59,15 +56,15 @@ public class StepActivity extends AppCompatActivity {
     }
 
     public void next(View v) {
+        /*TextView tv1 = (TextView)findViewById(R.id.stepDescriptionText);
+        tv1.setText(cookies.stepIndexOf(0));
+        setContentView(tv1);
 
-        TextView oldStep;
-        TextView oldTitle;
+        String string = getString(R.string.stepDirectionsText);
+        string = cookies.stepIndexOf(0); */
 
-        oldStep = (TextView) findViewById(R.id.stepDescriptionText);
-        oldStep.setText("hi");
-
-        oldTitle = (TextView) findViewById(R.id.stepTitle);
-        oldTitle.setText("Step #" + (currentStep+1));
+        final TextView textViewToChange = (TextView) findViewById(R.id.stepDescriptionText);
+        textViewToChange.setText("The new text that I'd like to display now that the user has pushed a button.");
 
         Button mButton = (Button) findViewById(R.id.nextButton);
 
