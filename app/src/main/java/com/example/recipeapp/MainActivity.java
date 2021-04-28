@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readQuestionData() {
-        InputStream is = getResources().openRawResource(R.raw.)
+        //InputStream is = getResources().openRawResource(R.raw.)
     }
 
     public void cookRecipe(View v) {
