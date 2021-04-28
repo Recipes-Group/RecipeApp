@@ -4,14 +4,7 @@
     <string name="stepNumberText">Step #1</string>
     <string name="chocolateChipCookieContentDescription">This is a picture of a chocolate chip cookie</string>
     <string name="chocolateCakeContentDescription">This is a picture of a chocolate cake</string>
-
     <string name="infoButtonText">INFO</string>
-    <string name="nextButtonText">NEXT</string>
-    <string name="backButtonText">BACK</string>
-    <string name="repeatButtonText">REPEAT</string>
-    <string name="skipButtonText">SKIP</string>
-    <string name="quitButtonText">QUIT</string>
-
     <string name="cookButtonText">Cook Now!</string>
     <string name="stepDirectionsText">Preheat oven to 350 degrees F (175 degrees C).</string>
 
@@ -21,11 +14,12 @@
     <string name="command3Text">Repeat ==> Reads the most recent step again.</string>
     <string name="command4Text">Skip   ==> Skips to the step you are choosing. Steps entered must be between 1 and last step.</string>
     <string name="command5Text">Quit   ==> Stops making the recipe and returns you to the home screen.</string>
-    <string name="command6Text">Info ==> Displays these commands.</string>
+    <string name="command6Text">Finish ==> Displays these commands.</string>
 
     <string name="onOffButtonStr">Off</string>
     <string name="micContentDescription">Image of Mic</string>
     <string name="chocolateChipCookieLabel">Chocolate Chip Cookies</string>
     <string name="chocolateCakeLabel">Chocolate Cake</string>
+    <string name="nextButtonText">NEXT</string>
 
 </resources>
