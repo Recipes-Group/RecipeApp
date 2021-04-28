@@ -105,7 +105,7 @@ public class StepActivity extends AppCompatActivity {
         if(currentStep<=0) {
             toast1 = Toast.makeText(getApplicationContext(), "This is the first step. Say or press 'NEXT' to continue.", Toast.LENGTH_LONG);
             toast1.show();
-            currentStep--;
+            currentStep++;
             return;
         }
 
@@ -123,10 +123,14 @@ public class StepActivity extends AppCompatActivity {
 
     public void repeat(View v) {
         //reads current text on the screen --> recipe.getStepIndexOf(currentStep - 1);
+
     }
 
     public void skip(View v) {
         //popup --> asks "Which step would you like to skip to?"
+
+        Intent intent = new Intent(this, SkipPopup.class);
+        startActivity(intent);
 
     }
 
