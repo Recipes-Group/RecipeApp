@@ -1,5 +1,8 @@
 package com.example.recipeapp;
 
+import android.view.View;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class Recipe {
@@ -65,12 +68,13 @@ public class Recipe {
         return ingredients.get(index);
     }
 
-    public void ingredientsToString() {
-        System.out.println("\nINGREDIENTS");
-
-        for(int i = 0; i<this.getNumberIngredients(); i++) {
-            System.out.println(this.ingredientIndexOf(i));
+    public String ingredientsToString() {
+        String toPrint = new String("");
+        for(int i = 0; i < this.getNumberIngredients(); i++) {
+            toPrint = toPrint.concat(ingredientIndexOf(i));
         }
+
+        return toPrint;
     }
 
     public String getURL() {
@@ -80,8 +84,6 @@ public class Recipe {
     public void changeMicStatus() {
         microphoneOn = !microphoneOn;
     }
-
-    // ========================================================================================================================================
 
     //1. Next
     public String getNextStep() {
@@ -111,6 +113,5 @@ public class Recipe {
 
     }
 
-    // =============================================================================================================================================
 
 }
