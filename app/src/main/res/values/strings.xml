@@ -26,6 +26,7 @@
     <string name="micContentDescription">Image of Mic</string>
     <string name="chocolateChipCookieLabel">Chocolate Chip Cookies</string>
     <string name="chocolateCakeLabel">Chocolate Cake</string>
+    <string name="ingredientTitleStr">Ingredients</string>
 
     <string name="skipPromptText">Which step would you like to skip to?</string>
 
