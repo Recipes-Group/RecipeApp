@@ -129,8 +129,8 @@ public class StepActivity extends AppCompatActivity {
     public void skip(View v) {
         //popup --> asks "Which step would you like to skip to?"
 
-        Intent intent = new Intent(this, SkipPopup.class);
-        startActivity(intent);
+        Intent intent2 = new Intent(this, SkipPopup.class);
+        startActivity(intent2);
 
     }
 

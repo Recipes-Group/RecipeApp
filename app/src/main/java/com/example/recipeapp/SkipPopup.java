@@ -15,9 +15,9 @@ public class SkipPopup extends AppCompatActivity {
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
+        double width = dm.widthPixels * 0.8;
+        double height = dm.heightPixels * 0.6;
 
-        //getWindow().setLayout((int) width*0.8,height*0.6);
+        getWindow().setLayout((int) width,(int) height);
     }
 }
