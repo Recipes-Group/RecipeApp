@@ -2,7 +2,10 @@ package com.example.recipeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -31,7 +34,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readQuestionData() {
-        //InputStream is = getResources().openRawResource(R.raw.sample_data.csv);
+        InputStream is = getResources().openRawResource(R.raw.sample_data);
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        String line = "";
+        try {
+            while ((line = reader.readLine()) != null){
+                //Split by comma
+                String[] field = line.split(",");
+                //Question q = new Question(fields[0], fields[1]);
+            }
+        }
+        catch (IOException e) {
+
+        }
     }
 
     public void cookRecipe(View v) {
