@@ -15,9 +15,16 @@ public class Recipe {
     private boolean microphoneOn = false;
     private int step = 0;
 
-    Recipe(String name, String link) {
+    public Recipe(String name, String link) {
         recipeName = name;
         url = link;
+    }
+
+    public Recipe(String name, String link, ArrayList<String> ingredients, ArrayList<String> steps) {
+        recipeName = name;
+        url = link;
+        this.ingredients = ingredients;
+        this.steps = steps;
     }
 
     public String getRecipeName() {
@@ -36,9 +43,7 @@ public class Recipe {
         return steps;
     }
 
-    public String stepIndexOf(int index) {
-        return steps.get(index);
-    }
+    public String stepIndexOf(int index) { return steps.get(index); }
 
     public void displayStep(int index) {
         System.out.println(steps.get(index));
@@ -84,34 +89,4 @@ public class Recipe {
     public void changeMicStatus() {
         microphoneOn = !microphoneOn;
     }
-
-    //1. Next
-    public String getNextStep() {
-        step++;
-        return this.stepIndexOf(step);
-    }
-
-    //2. Repeat
-    public String repeatStep() {
-        return this.stepIndexOf(step);
-    }
-
-    //3. Back
-    public String getPreviousStep() {
-        step--;
-        return this.stepIndexOf(step);
-    }
-
-    //4. Skip
-    public String skipTo(int newStep) {
-        step = newStep - 1;
-        return this.stepIndexOf(step);
-    }
-
-    //5. Finish
-    public void finish() {
-
-    }
-
-
 }
