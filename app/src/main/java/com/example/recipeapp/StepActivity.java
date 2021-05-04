@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,11 @@ public class StepActivity extends AppCompatActivity {
     private ArrayList<String> steps = new ArrayList<String>();
     private Recipe recipe;
     private int currentStep;
+    TextView oldStep;
+    TextView oldTitle;
+    Toast toast1;
+    Toast toast2;
+    Toast toast3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,11 +70,6 @@ public class StepActivity extends AppCompatActivity {
     }
 
     public void next(View v) {
-
-        TextView oldStep;
-        TextView oldTitle;
-        Toast toast1;
-        Toast toast2;
 
         currentStep = currentStep + 1;
 
@@ -118,19 +119,25 @@ public class StepActivity extends AppCompatActivity {
         oldTitle.setText("Step #" + (currentStep));
 
         Button mButton = (Button) findViewById(R.id.nextButton);
-
     }
 
     public void repeat(View v) {
         //reads current text on the screen --> recipe.getStepIndexOf(currentStep - 1);
-
     }
 
     public void skip(View v) {
         //popup --> asks "Which step would you like to skip to?"
 
+        toast3 = Toast.makeText(getApplicationContext(), "You pressed the SKIP button", Toast.LENGTH_LONG);
+        toast3.show();
+
         Intent intent2 = new Intent(this, SkipPopup.class);
         startActivity(intent2);
+
+        EditText step = findViewById(R.id.skipPromptNum);
+        String currentStep = step.getText().toString();
+        int newStep = Integer.parseInt(currentStep);
+
 
     }
 

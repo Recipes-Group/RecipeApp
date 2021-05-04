@@ -21,6 +21,8 @@
     <string name="repeatButtonText">REPEAT</string>
     <string name="skipButtonText">SKIP</string>
     <string name="quitButtonText">QUIT</string>
+    <string name="doneButtonText">DONE</string>
+
 
     <string name="onOffButtonStr">Off</string>
     <string name="micContentDescription">Image of Mic</string>
