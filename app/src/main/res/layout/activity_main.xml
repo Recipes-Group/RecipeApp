@@ -42,7 +42,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="10dp"
                 android:contentDescription="@string/chocolateChipCookieContentDescription"
-                android:onClick="cookRecipe"
+                android:onClick="openIngredientsPage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
                 android:layout_height="280dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/chocolateCakeContentDescription"
-                android:onClick="cookRecipe"
+                android:onClick="openIngredientsPage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.333"
                 app:layout_constraintStart_toStartOf="parent"
@@ -96,14 +96,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/cookButton"
-        android:layout_width="122dp"
-        android:layout_height="48dp"
-        android:onClick="cookRecipe"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="853dp"
-        tools:text="@string/cookButtonText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
