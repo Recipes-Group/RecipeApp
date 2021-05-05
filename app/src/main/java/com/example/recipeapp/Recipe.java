@@ -89,4 +89,32 @@ public class Recipe {
     public void changeMicStatus() {
         microphoneOn = !microphoneOn;
     }
+
+    //1. Next
+    public String getNextStep() {
+        step++;
+        return this.stepIndexOf(step);
+    }
+
+    //2. Repeat
+    public String repeatStep() {
+        return this.stepIndexOf(step);
+    }
+
+    //3. Back
+    public String getPreviousStep() {
+        step--;
+        return this.stepIndexOf(step);
+    }
+
+    //4. Skip
+    public String skipTo(int newStep) {
+        step = newStep - 1;
+        return this.stepIndexOf(step);
+    }
+
+    //5. Finish
+    public void finish() {
+
+    }
 }

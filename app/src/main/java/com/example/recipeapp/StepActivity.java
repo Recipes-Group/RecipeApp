@@ -138,7 +138,6 @@ public class StepActivity extends AppCompatActivity {
         String currentStep = step.getText().toString();
         int newStep = Integer.parseInt(currentStep);
 
-
     }
 
     public void quit(View v) {
