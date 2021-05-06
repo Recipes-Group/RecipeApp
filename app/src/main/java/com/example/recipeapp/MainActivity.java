@@ -20,8 +20,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Recipe> recipes = new ArrayList<Recipe>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         readRecipeData();
-        for(Recipe r : recipes){
+
+        //Get Global Controller Class Object
+        final Controller aController = (Controller) getApplicationContext();
+
+        for(Recipe r : aController.getRecipes()){
             Log.v("MainActivity", "Recipe Name: " + r.getRecipeName());
         }
     }
@@ -42,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         InputStream is = getResources().openRawResource(R.raw.recipe_database);
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+        //Get Global Controller Class Object
+        final Controller aController = (Controller) getApplicationContext();
+
         String line = "";
         int numIngredientsFields = 13;
         int numStepsFields = 10;
@@ -57,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 for(int i = 0; i < numStepsFields; i++){
                     recipe.addStep(fields[i+15]);
                 }
-                recipes.add(recipe);
+                aController.addRecipe(recipe);
             }
         }
         catch (IOException e) {
@@ -69,6 +75,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, IngredientsActivity.class);
         startActivity(intent);
     }
-
 
 }
