@@ -8,12 +8,12 @@
     <string name="stepDirectionsText">Preheat oven to 350 degrees F (175 degrees C).</string>
 
     <string name="infoTitleText">Commands Info</string>
-    <string name="command1Text">Next   ==> Advances to the next step.</string>
-    <string name="command2Text">Back   ==> Reads the previous step.</string>
-    <string name="command3Text">Repeat ==> Reads the most recent step again.</string>
-    <string name="command4Text">Skip   ==> Skips to the step you are choosing. Steps entered must be between 1 and last step.</string>
-    <string name="command5Text">Quit   ==> Stops making the recipe and returns you to the home screen.</string>
-    <string name="command6Text">Finish ==> Displays these commands.</string>
+    <string name="command1Text">1. NEXT: Advances to the next step.</string>
+    <string name="command2Text">2. BACK: Reads the previous step.</string>
+    <string name="command3Text">3. REPEAT: Reads the most recent step again.</string>
+    <string name="command4Text">4. SKIP: Skips to the step you are choosing. Steps entered must be between 1 and last step.</string>
+    <string name="command5Text">5. QUIT: Stops making the recipe and returns you to the home screen.</string>
+    <string name="command6Text">6. FINISH: Displays these commands.</string>
 
     <string name="infoButtonText">INFO</string>
     <string name="nextButtonText">NEXT</string>
@@ -22,6 +22,8 @@
     <string name="skipButtonText">SKIP</string>
     <string name="quitButtonText">QUIT</string>
     <string name="doneButtonText">DONE</string>
+    <string name="yesButtonText">YES</string>
+    <string name="noButtonText">NO</string>
 
 
     <string name="onOffButtonStr">Off</string>
@@ -31,6 +33,13 @@
     <string name="ingredientTitleStr">Ingredients</string>
 
     <string name="skipPromptText">Which step would you like to skip to?</string>
+    <string name="quitPromptText">Are you sure you want to quit?</string>
+    <string name="title_activity_quit_popup">QuitPopup</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 
 
 </resources>

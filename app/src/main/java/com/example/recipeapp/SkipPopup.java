@@ -40,8 +40,8 @@ public class SkipPopup extends AppCompatActivity {
         Toast toast1 = Toast.makeText(getApplicationContext(), "You pressed the DONE Button", Toast.LENGTH_LONG);
         toast1.show();
 
-        /* Intent intent = new Intent(this, StepActivity.class);
-        startActivity(intent); */ //commented out to test other things without it
+        Intent intent = new Intent(this, StepActivity.class);
+        startActivity(intent); //originally commented out to test other things without it
     }
 
 }

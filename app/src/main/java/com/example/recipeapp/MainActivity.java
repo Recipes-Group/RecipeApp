@@ -71,9 +71,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void openIngredientsPage(View v) {
-        Intent intent = new Intent(this, IngredientsActivity.class);
+    public void cookRecipe(View v){
+        Intent intent = new Intent(this, StepActivity.class);
         startActivity(intent);
     }
+
+    /* public void openIngredientsPage(View v) {
+        Intent intent = new Intent(this, IngredientsActivity.class);
+        startActivity(intent);
+    } */
 
 }
