@@ -17,6 +17,7 @@
         <activity android:name=".StepActivity" />
         <activity android:name=".SpeechRecognitionActivity"></activity>
         <activity android:name=".SkipPopup"></activity>
+        <activity android:name=".IngredientsActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
