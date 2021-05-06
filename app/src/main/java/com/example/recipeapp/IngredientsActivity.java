@@ -29,7 +29,7 @@ public class IngredientsActivity extends AppCompatActivity {
 
         String toPrint = "";
         for(int i = 0; i < aController.getRecipe().getNumberIngredients(); i++) {
-            toPrint = toPrint.concat(aController.getRecipe().getIngredients().get(i));
+            toPrint = toPrint.concat(aController.getRecipe().getIngredients().get(i) + "\n");
         }
 
         return toPrint;
