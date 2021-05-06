@@ -24,6 +24,9 @@ public class StepActivity extends AppCompatActivity {
     Toast toast1;
     Toast toast2;
     Toast toast3;
+    Toast toast4;
+
+    //final Controller aController = (Controller) getApplicationContext();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,11 +141,27 @@ public class StepActivity extends AppCompatActivity {
         String currentStep = step.getText().toString();
         int newStep = Integer.parseInt(currentStep);
 
+        //Set newStep as the new step
+        oldStep = (TextView) findViewById(R.id.stepDescriptionText);
+        oldStep.setText(recipe.stepIndexOf(newStep-1));
+
+        oldTitle = (TextView) findViewById(R.id.stepTitle);
+        oldTitle.setText("Step #" + (newStep));
+
     }
 
     public void quit(View v) {
         //popup --> asks "are you sure you want to quit?"
         //returns to the home page
+
+        //popup --> asks "Which step would you like to skip to?"
+
+        toast4 = Toast.makeText(getApplicationContext(), "You pressed the SKIP button", Toast.LENGTH_LONG);
+        toast4.show();
+
+        Intent intent3 = new Intent(this, QuitPopup.class);
+        startActivity(intent3);
+
     }
 
 }

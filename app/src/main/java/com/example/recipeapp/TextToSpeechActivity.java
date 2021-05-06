@@ -1,4 +1,4 @@
-package com.example.recipeapp;
+/* package com.example.recipeapp;
 
 //Source: https://www.tutorialspoint.com/android/android_text_to_speech.htm
 import android.os.Bundle;
@@ -83,3 +83,4 @@ public class TextToSpeechActivity extends AppCompatActivity {
     }
 
 }
+*/

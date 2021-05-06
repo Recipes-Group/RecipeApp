@@ -71,20 +71,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void openIngredientsPageChocolateChipCookies(View v) {
-        //Get Global Controller Class Object
-        final Controller aController = (Controller) getApplicationContext();
-        aController.setRecipeNum(0);
-
-        Intent intent = new Intent(this, IngredientsActivity.class);
-        startActivity(intent);
-    }
-
-    public void openIngredientsPageChocolateCake(View v) {
-        //Get Global Controller Class Object
-        final Controller aController = (Controller) getApplicationContext();
-        aController.setRecipeNum(1);
-
+    public void openIngredientsPage(View v) {
         Intent intent = new Intent(this, IngredientsActivity.class);
         startActivity(intent);
     }
