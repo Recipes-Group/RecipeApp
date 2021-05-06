@@ -16,9 +16,6 @@ import java.util.ArrayList;
 
 public class StepActivity extends AppCompatActivity {
 
-    private ArrayList<String> steps = new ArrayList<String>();
-    private Recipe recipe;
-    private int currentStep;
     TextView oldStep;
     TextView oldTitle;
     Toast toast1;
@@ -26,34 +23,13 @@ public class StepActivity extends AppCompatActivity {
     Toast toast3;
     Toast toast4;
 
-    //final Controller aController = (Controller) getApplicationContext();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step);
 
-        Log.d("in next method", "currentStep = " + currentStep);
-
-        currentStep = 1;
-
-        recipe = new Recipe("Chocolate Chip Cookies", "https://www.allrecipes.com/recipe/10813/best-chocolate-chip-cookies/");
-
-        recipe.addIngredient("1 cup butter, softened");
-        recipe.addIngredient("1 cup white sugar");
-        recipe.addIngredient("1 cup packed brown sugar");
-        recipe.addIngredient("2 eggs");
-        recipe.addIngredient("1 teaspoon baking soda");
-        recipe.addIngredient("2 teaspoons hot water");
-        recipe.addIngredient("½ teaspoon salt");
-        recipe.addIngredient("3 cups all-purpose flour");
-        recipe.addIngredient("2 cups semisweet chocolate chips");
-        recipe.addIngredient("1 cup chopped walnuts");
-
-        recipe.addStep("Preheat oven to 350 degrees F (175 degrees C).");
-        recipe.addStep("Cream together the butter, white sugar, and brown sugar until smooth. Beat in the eggs one at a time, then stir in the vanilla. Dissolve baking soda in hot water. Add to batter along with salt. Stir in flour, chocolate chips, and nuts. Drop by large spoonfuls onto ungreased pans.");
-        recipe.addStep("Bake for about 10 minutes in the preheated oven, or until edges are nicely browned.");
-
+        final Controller aController = (Controller) getApplicationContext();
+        Log.d("in next method", "currentStep = " + aController.getCurrentStep());
     }
 
     public void getInfo(View v) {
@@ -73,53 +49,49 @@ public class StepActivity extends AppCompatActivity {
     }
 
     public void next(View v) {
+        final Controller aController = (Controller) getApplicationContext();
+        aController.setCurrentStep(aController.getCurrentStep() + 1);
 
-        currentStep = currentStep + 1;
-
-        if(currentStep>recipe.getNumberSteps()) {
+        if(aController.getCurrentStep() > aController.getRecipe().getNumberSteps()) {
             toast1 = Toast.makeText(getApplicationContext(), "This is the last step. Say 'Quit' if you are finished.", Toast.LENGTH_LONG);
             toast1.show();
-            currentStep--;
+            aController.setCurrentStep(aController.getCurrentStep() - 1);
             return;
         }
 
         oldStep = (TextView) findViewById(R.id.stepDescriptionText);
-        oldStep.setText(recipe.getNextStep());
+        oldStep.setText(aController.getRecipe().getNextStep());
 
         oldTitle = (TextView) findViewById(R.id.stepTitle);
-        oldTitle.setText("Step #" + (currentStep));
+        oldTitle.setText("Step #" + (aController.getCurrentStep()));
 
 
         toast2 = Toast.makeText(getApplicationContext(), "currentStep = ", Toast.LENGTH_LONG);
 
-        Log.d("in next method", currentStep + "current step");
+        Log.d("in next method", aController.getCurrentStep() + "current step");
 
         Button mButton = (Button) findViewById(R.id.nextButton);
 
     }
 
     public void back(View v) {
+        final Controller aController = (Controller) getApplicationContext();
+        aController.setCurrentStep(aController.getCurrentStep() - 1);
 
-        TextView oldStep;
-        TextView oldTitle;
-        Toast toast1;
-
-        currentStep--;
-
-        if(currentStep<=0) {
+        if(aController.getCurrentStep() <= 0) {
             toast1 = Toast.makeText(getApplicationContext(), "This is the first step. Say or press 'NEXT' to continue.", Toast.LENGTH_LONG);
             toast1.show();
-            currentStep++;
+            aController.setCurrentStep(aController.getCurrentStep() + 1);;
             return;
         }
 
         Toast toast = Toast.makeText(getApplicationContext(), "currentStep = ", Toast.LENGTH_LONG);
 
         oldStep = (TextView) findViewById(R.id.stepDescriptionText);
-        oldStep.setText(recipe.getPreviousStep());
+        oldStep.setText(aController.getRecipe().getPreviousStep());
 
         oldTitle = (TextView) findViewById(R.id.stepTitle);
-        oldTitle.setText("Step #" + (currentStep));
+        oldTitle.setText("Step #" + (aController.getCurrentStep()));
 
         Button mButton = (Button) findViewById(R.id.nextButton);
     }
@@ -130,6 +102,7 @@ public class StepActivity extends AppCompatActivity {
 
     public void skip(View v) {
         //popup --> asks "Which step would you like to skip to?"
+        final Controller aController = (Controller) getApplicationContext();
 
         toast3 = Toast.makeText(getApplicationContext(), "You pressed the SKIP button", Toast.LENGTH_LONG);
         toast3.show();
@@ -139,15 +112,14 @@ public class StepActivity extends AppCompatActivity {
 
         EditText step = findViewById(R.id.skipPromptNum);
         String currentStep = step.getText().toString();
-        int newStep = Integer.parseInt(currentStep);
+        aController.setCurrentStep(Integer.parseInt(currentStep));
 
         //Set newStep as the new step
         oldStep = (TextView) findViewById(R.id.stepDescriptionText);
-        oldStep.setText(recipe.stepIndexOf(newStep-1));
+        oldStep.setText(aController.getRecipe().getSteps().get(aController.getCurrentStep() - 1));
 
         oldTitle = (TextView) findViewById(R.id.stepTitle);
-        oldTitle.setText("Step #" + (newStep));
-
+        oldTitle.setText("Step #" + (aController.getCurrentStep()));
     }
 
     public void quit(View v) {

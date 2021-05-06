@@ -8,6 +8,7 @@ public class Controller extends Application {
     private ArrayList<Recipe> recipes = new ArrayList<Recipe>();
     private int recipeNum;
     private Recipe recipe;
+    private int currentStep;
 
     public ArrayList<Recipe> getRecipes() {
         return recipes;
@@ -21,13 +22,22 @@ public class Controller extends Application {
         return recipeNum;
     }
 
-    public void setRecipeNum(int buttonNum) {
+    public void setRecipeInformation(int buttonNum) {
         recipeNum = buttonNum;
         recipe = recipes.get(recipeNum);
+        currentStep = 1;
     }
 
     public Recipe getRecipe() {
 
         return recipe;
+    }
+
+    public int getCurrentStep() {
+        return currentStep;
+    }
+
+    public void setCurrentStep(int i) {
+        currentStep = i;
     }
 }

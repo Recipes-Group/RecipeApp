@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeApp">
         <activity android:name=".InfoButtonActivity"></activity>
-        <activity android:name=".StepActivity" />
+        <activity android:name=".StepActivity"></activity>
         <activity android:name=".SpeechRecognitionActivity"></activity>
         <activity android:name=".SkipPopup"></activity>
         <activity android:name=".MainActivity">
