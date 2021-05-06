@@ -164,9 +164,4 @@ public class StepActivity extends AppCompatActivity {
 
     }
 
-    public void printIngredients(View v) {
-        String toPrint = recipe.ingredientsToString();
-        TextView ingredients = v.findViewById(R.id.IngredientsList);
-        ingredients.setText(toPrint);
-    }
 }

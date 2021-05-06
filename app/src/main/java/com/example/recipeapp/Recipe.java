@@ -20,13 +20,6 @@ public class Recipe {
         url = link;
     }
 
-    public Recipe(String name, String link, ArrayList<String> ingredients, ArrayList<String> steps) {
-        recipeName = name;
-        url = link;
-        this.ingredients = ingredients;
-        this.steps = steps;
-    }
-
     public String getRecipeName() {
         return recipeName;
     }
@@ -69,19 +62,6 @@ public class Recipe {
         return ingredients.size();
     }
 
-    public String ingredientIndexOf(int index) {
-        return ingredients.get(index);
-    }
-
-    public String ingredientsToString() {
-        String toPrint = new String("");
-        for(int i = 0; i < this.getNumberIngredients(); i++) {
-            toPrint = toPrint.concat(ingredientIndexOf(i));
-        }
-
-        return toPrint;
-    }
-
     public String getURL() {
         return url;
     }
@@ -117,4 +97,5 @@ public class Recipe {
     public void finish() {
 
     }
+
 }
