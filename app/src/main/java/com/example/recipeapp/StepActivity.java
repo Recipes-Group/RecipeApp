@@ -134,6 +134,8 @@ public class StepActivity extends AppCompatActivity {
     private String ingredientsToString() {
         final Controller aController = (Controller) getApplicationContext();
 
+
+
         String toPrint = "";
         for(int i = 0; i < aController.getRecipe().getNumberIngredients(); i++) {
             toPrint = toPrint.concat(aController.getRecipe().getIngredients().get(i) + "\n");

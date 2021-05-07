@@ -19,6 +19,7 @@ public class Controller extends Application {
     }
 
     public int getRecipeNum() {
+
         return recipeNum;
     }
 
@@ -37,6 +38,13 @@ public class Controller extends Application {
     }
 
     public void setCurrentStep(int i) {
+
         currentStep = i;
     }
+
+    public int getNumberIngredients(int ingredientIndex) {
+
+        return recipes.get(ingredientIndex).getNumberIngredients();
+    }
+
 }
