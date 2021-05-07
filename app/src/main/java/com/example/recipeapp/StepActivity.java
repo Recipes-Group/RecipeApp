@@ -15,7 +15,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class StepActivity extends AppCompatActivity {
-
     TextView oldStep;
     TextView oldTitle;
     Toast toast1;
@@ -30,6 +29,7 @@ public class StepActivity extends AppCompatActivity {
 
         final Controller aController = (Controller) getApplicationContext();
         Log.d("in next method", "currentStep = " + aController.getCurrentStep());
+        displayStep();
     }
 
     public void getInfo(View v) {
@@ -40,12 +40,6 @@ public class StepActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, InfoButtonActivity.class);
         startActivity(intent);
-    }
-
-    public void displayInfo() {
-        Intent intent = new Intent(this, InfoButtonActivity.class);
-        startActivity(intent);
-
     }
 
     public void next(View v) {
@@ -59,12 +53,7 @@ public class StepActivity extends AppCompatActivity {
             return;
         }
 
-        oldStep = (TextView) findViewById(R.id.stepDescriptionText);
-        oldStep.setText(aController.getRecipe().getNextStep());
-
-        oldTitle = (TextView) findViewById(R.id.stepTitle);
-        oldTitle.setText("Step #" + (aController.getCurrentStep()));
-
+        displayStep();
 
         toast2 = Toast.makeText(getApplicationContext(), "currentStep = ", Toast.LENGTH_LONG);
 
@@ -78,7 +67,7 @@ public class StepActivity extends AppCompatActivity {
         final Controller aController = (Controller) getApplicationContext();
         aController.setCurrentStep(aController.getCurrentStep() - 1);
 
-        if(aController.getCurrentStep() <= 0) {
+        if(aController.getCurrentStep() < 0) {
             toast1 = Toast.makeText(getApplicationContext(), "This is the first step. Say or press 'NEXT' to continue.", Toast.LENGTH_LONG);
             toast1.show();
             aController.setCurrentStep(aController.getCurrentStep() + 1);;
@@ -87,11 +76,7 @@ public class StepActivity extends AppCompatActivity {
 
         Toast toast = Toast.makeText(getApplicationContext(), "currentStep = ", Toast.LENGTH_LONG);
 
-        oldStep = (TextView) findViewById(R.id.stepDescriptionText);
-        oldStep.setText(aController.getRecipe().getPreviousStep());
-
-        oldTitle = (TextView) findViewById(R.id.stepTitle);
-        oldTitle.setText("Step #" + (aController.getCurrentStep()));
+        displayStep();
 
         Button mButton = (Button) findViewById(R.id.nextButton);
     }
@@ -115,11 +100,7 @@ public class StepActivity extends AppCompatActivity {
         aController.setCurrentStep(Integer.parseInt(currentStep));
 
         //Set newStep as the new step
-        oldStep = (TextView) findViewById(R.id.stepDescriptionText);
-        oldStep.setText(aController.getRecipe().getSteps().get(aController.getCurrentStep() - 1));
-
-        oldTitle = (TextView) findViewById(R.id.stepTitle);
-        oldTitle.setText("Step #" + (aController.getCurrentStep()));
+       displayStep();
     }
 
     public void quit(View v) {
@@ -136,4 +117,28 @@ public class StepActivity extends AppCompatActivity {
 
     }
 
+    public void displayStep() {
+        final Controller aController = (Controller) getApplicationContext();
+        oldStep = (TextView) findViewById(R.id.stepDescriptionText);
+        oldTitle = (TextView) findViewById(R.id.stepTitle);
+        if(aController.getCurrentStep() == 0) {
+            oldStep.setText(ingredientsToString());
+            oldTitle.setText("Ingredients");
+        }
+        else {
+            oldStep.setText(aController.getRecipe().getSteps().get(aController.getCurrentStep() - 1));
+            oldTitle.setText("Step #" + (aController.getCurrentStep()));
+        }
+    }
+
+    private String ingredientsToString() {
+        final Controller aController = (Controller) getApplicationContext();
+
+        String toPrint = "";
+        for(int i = 0; i < aController.getRecipe().getNumberIngredients(); i++) {
+            toPrint = toPrint.concat(aController.getRecipe().getIngredients().get(i) + "\n");
+        }
+
+        return toPrint;
+    }
 }

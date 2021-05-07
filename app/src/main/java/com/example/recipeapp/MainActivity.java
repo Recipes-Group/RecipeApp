@@ -52,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
         int numIngredientsFields = 13;
         int numStepsFields = 10;
         try {
-            while ((line = reader.readLine()) != null){
+            while ((line = reader.readLine()) != null) {
                 //Split by comma
                 String[] fields = line.split("@");
                 System.out.println(fields.length);
                 Recipe recipe = new Recipe(fields[0], fields[1]);
-                for(int i = 0; i < numIngredientsFields; i++){
+                for(int i = 0; i < numIngredientsFields; i++) {
                     recipe.addIngredient(fields[i+2]);
                 }
                 for(int i = 0; i < numStepsFields; i++){
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         final Controller aController = (Controller) getApplicationContext();
         aController.setRecipeInformation(0);
 
-        Intent intent = new Intent(this, IngredientsActivity.class);
+        Intent intent = new Intent(this, StepActivity.class);
         startActivity(intent);
     }
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         final Controller aController = (Controller) getApplicationContext();
         aController.setRecipeInformation(1);
 
-        Intent intent = new Intent(this, IngredientsActivity.class);
+        Intent intent = new Intent(this, StepActivity.class);
         startActivity(intent);
     }
 

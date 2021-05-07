@@ -25,11 +25,10 @@ public class Controller extends Application {
     public void setRecipeInformation(int buttonNum) {
         recipeNum = buttonNum;
         recipe = recipes.get(recipeNum);
-        currentStep = 1;
+        currentStep = 0;
     }
 
     public Recipe getRecipe() {
-
         return recipe;
     }
 
