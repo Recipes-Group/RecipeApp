@@ -86,14 +86,6 @@
             android:onClick="next"
             android:text="@string/nextButtonText" />
 
-        <Button
-            android:id="@+id/repeatButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="repeat"
-            android:text="@string/repeatButtonText" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
