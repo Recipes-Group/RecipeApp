@@ -109,12 +109,11 @@ public class StepActivity extends AppCompatActivity {
 
         //popup --> asks "Which step would you like to skip to?"
 
-        toast4 = Toast.makeText(getApplicationContext(), "You pressed the SKIP button", Toast.LENGTH_LONG);
+        toast4 = Toast.makeText(getApplicationContext(), "You pressed the QUIT button", Toast.LENGTH_LONG);
         toast4.show();
 
         Intent intent3 = new Intent(this, QuitPopup.class);
         startActivity(intent3);
-
     }
 
     public void displayStep() {

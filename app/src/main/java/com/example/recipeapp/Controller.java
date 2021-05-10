@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public class Controller extends Application {
     private ArrayList<Recipe> recipes = new ArrayList<Recipe>();
     private int recipeNum;
-    private Recipe recipe;
     private int currentStep;
 
     public ArrayList<Recipe> getRecipes() {
@@ -25,12 +24,11 @@ public class Controller extends Application {
 
     public void setRecipeInformation(int buttonNum) {
         recipeNum = buttonNum;
-        recipe = recipes.get(recipeNum);
         currentStep = 0;
     }
 
     public Recipe getRecipe() {
-        return recipe;
+        return recipes.get(recipeNum);
     }
 
     public int getCurrentStep() {
