@@ -58,10 +58,20 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(fields.length);
                 Recipe recipe = new Recipe(fields[0], fields[1]);
                 for(int i = 0; i < numIngredientsFields; i++) {
-                    recipe.addIngredient(fields[i+2]);
+                    if(fields[i+2].length() == 1 && fields[i+2].contains(" ")){
+                        break;
+                    }
+                    else {
+                        recipe.addIngredient(fields[i+2]);
+                    }
                 }
                 for(int i = 0; i < numStepsFields; i++){
-                    recipe.addStep(fields[i+15]);
+                    if(fields[i+15].length() == 1 && fields[i+15].contains(" ")){
+                        break;
+                    }
+                    else {
+                        recipe.addStep(fields[i+15]);
+                    }
                 }
                 aController.addRecipe(recipe);
             }
