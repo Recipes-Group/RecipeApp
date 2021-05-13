@@ -114,6 +114,7 @@ public class StepActivity extends AppCompatActivity {
 
         Intent intent3 = new Intent(this, QuitPopup.class);
         startActivity(intent3);
+
     }
 
     public void displayStep() {
