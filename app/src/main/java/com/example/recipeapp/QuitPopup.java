@@ -20,7 +20,6 @@ public class QuitPopup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quit_popup);
-
     }
 
     public void yes(View v) {
